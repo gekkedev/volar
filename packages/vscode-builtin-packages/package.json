@@ -3,9 +3,7 @@
 	"version": "1.0.0",
 	"main": "out/index.js",
 	"dependencies": {
+		"typescript": "latest",
 		"upath": "latest"
-	},
-	"devDependencies": {
-		"typescript": "latest"
 	}
 }
