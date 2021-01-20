@@ -24,7 +24,6 @@ import {
 	DocumentColorRequest,
 	// html
 	FoldingRangeRequest,
-	LinkedEditingRangeRequest,
 	DocumentFormattingRequest,
 } from 'vscode-languageserver/node';
 import { createLanguageServiceHost } from './languageServiceHost';
@@ -359,11 +358,6 @@ function initLanguageServiceHtml() {
 		if (!document) return undefined;
 		return ls.getFoldingRanges(document);
 	});
-	connection.languages.onLinkedEditingRange(handler => {
-		const document = documents.get(handler.textDocument.uri);
-		if (!document) return;
-		return ls.findLinkedEditingRanges(document, handler.position);
-	});
 }
 async function onInitializedApi() {
 	connection.client.register(ReferencesRequest.type, both);
@@ -413,6 +407,5 @@ function onInitializedHtml() {
 		documentSelector: [{ language: 'vue' }],
 	};
 	connection.client.register(FoldingRangeRequest.type, vueOnly);
-	connection.client.register(LinkedEditingRangeRequest.type, vueOnly);
 	connection.client.register(DocumentFormattingRequest.type, vueOnly);
 }

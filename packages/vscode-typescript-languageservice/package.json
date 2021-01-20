@@ -7,7 +7,7 @@
 	},
 	"dependencies": {
 		"vscode-languageserver-textdocument": "latest",
-		"vscode-languageserver": "latest",
+		"vscode-languageserver": "7.0.0-next.12",
 		"typescript-vscode-sh-plugin": "latest"
 	}
 }

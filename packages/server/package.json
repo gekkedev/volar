@@ -5,7 +5,7 @@
 		"@types/fs-extra": "latest"
 	},
 	"dependencies": {
-		"vscode-languageserver": "latest",
+		"vscode-languageserver": "7.0.0-next.12",
 		"vscode-languageserver-textdocument": "latest",
 		"fs-extra": "latest",
 		"upath": "latest"

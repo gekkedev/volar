@@ -32,7 +32,6 @@ import * as codeLens from './services/codeLens';
 import * as codeLensResolve from './services/codeLensResolve';
 import * as executeCommand from './services/executeCommand';
 import * as callHierarchy from './services/callHierarchy';
-import * as linkedEditingRanges from './services/linkedEditingRanges';
 import * as d3 from './services/d3';
 import { HTMLDocument } from 'vscode-html-languageservice';
 import * as globalServices from './globalServices';
@@ -53,7 +52,6 @@ export function createNoStateLanguageService() {
 		doFormatting: formatting.register(),
 		getFoldingRanges: foldingRanges.register(),
 		doAutoClose: autoClose.register(getHtmlDocument),
-		findLinkedEditingRanges: linkedEditingRanges.register(getHtmlDocument),
 	}
 	function getHtmlDocument(document: TextDocument) {
 		const _cache = cache.get(document.uri);
